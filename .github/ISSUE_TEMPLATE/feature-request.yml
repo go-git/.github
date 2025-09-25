@@ -1,0 +1,12 @@
+name: Feature Request
+description: Suggest an idea or improvement for go-git
+labels: [enhancement]
+body:
+  - type: textarea
+    id: feature
+    attributes:
+      label: Feature Description
+      description: What feature would you like to see? Why would it be useful?
+      placeholder: I’d like go-git to support ...
+    validations:
+      required: true

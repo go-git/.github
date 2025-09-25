@@ -1,0 +1,47 @@
+name: Bug Report
+description: Report a problem or unexpected behavior in go-git
+labels: [bug]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: Please describe the bug clearly. Include what you expected to happen vs. what actually happened.
+      placeholder: Tell us what happened...
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: go-git Version
+      description: The version of go-git you are using.
+      placeholder: e.g. v5.12.6
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Clear steps or code snippets that will reproduce the bug.
+      placeholder: |
+        1. Run `...`
+        2. Do `...`
+        3. Observe error `...`
+
+        Code example:
+        ```golang
+
+        ```
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Information
+      description: Any extra details that might help (error logs, system info, etc.)
+      placeholder: Paste logs or environment details here.
+    validations:
+      required: false
