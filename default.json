@@ -1,0 +1,70 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:recommended",
+        ":semanticCommits",
+        ":rebaseStalePrs",
+        ":configMigration",
+        ":automergeDisabled",
+        "mergeConfidence:age-confidence-badges",
+        "helpers:pinGitHubActionDigests"
+    ],
+    "baseBranchPatterns": [
+        "main"
+    ],
+    "labels": [
+        "dependencies"
+    ],
+    "prConcurrentLimit": 5,
+    "constraints": {
+        "go": "<1.25"
+    },
+    "postUpdateOptions": [
+        "gomodTidy",
+        "gomodUpdateImportPaths"
+    ],
+    "customManagers": [
+        {
+            "customType": "regex",
+            "managerFilePatterns": [
+                "/Makefile/",
+                "/hack/base.mk/"
+            ],
+            "matchStrings": [
+                "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)?( extractVersion=(?<extractVersion>.*?))?\\s+.+_(VERSION).*=(\\s|\"|)(?<currentValue>.*)(\"|)"
+            ]
+        }
+    ],
+    "packageRules": [
+        {
+            "matchManagers": [
+                "github-actions"
+            ],
+            "groupName": "github-actions",
+            "schedule": [
+                "* 5-8 * * 1"
+            ]
+        },
+        {
+            "groupName": "golang",
+            "matchManagers": [
+                "gomod"
+            ],
+            "matchPackagePrefixes": [
+                "golang.org/x/",
+                "google.golang.org/",
+                "github.com/google/"
+            ]
+        },
+        {
+            "groupName": "go-git",
+            "matchManagers": [
+                "gomod"
+            ],
+            "matchPackagePrefixes": [
+                "github.com/go-git/",
+                "github.com/pjbgf/sha1cd"
+            ]
+        }
+    ]
+}

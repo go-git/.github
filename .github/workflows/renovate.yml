@@ -1,0 +1,42 @@
+name: Renovate
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 5,7 * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get token
+        id: get_token
+        uses: actions/create-github-app-token@v2.1.4
+        with:
+          private-key: ${{ secrets.RENOVATE_PRIVATE_KEY }}
+          app-id: ${{ secrets.RENOVATE_APP_ID }}
+          owner: ${{ github.repository_owner }}
+          repositories: |
+            .github
+            cli
+            docs
+            go-billy
+            go-git
+            go-git-fixtures
+            gcfg
+
+      - name: Checkout
+        uses: actions/checkout@v5.0.0
+
+      - name: Self-hosted Renovate
+        uses: renovatebot/github-action@v44.0.1
+        with:
+          configurationFile: default.json
+          token: '${{ steps.get_token.outputs.token }}'
+        env:
+          LOG_LEVEL: debug
+          RENOVATE_USERNAME: go-git-renovate[bot]
+          RENOVATE_ONBOARDING: 'false'
+          RENOVATE_REPOSITORIES: go-git/.github,go-git/cli,go-git/docs,go-git/go-billy,go-git/go-git,go-git/go-git-fixtures,go-git/gcfg
