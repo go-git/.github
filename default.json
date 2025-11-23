@@ -64,6 +64,12 @@
                 "github.com/go-git/",
                 "github.com/pjbgf/sha1cd"
             ]
+        },
+        {
+            "matchDatasources": [
+                "golang-version"
+            ],
+            "allowedVersions": "<1.25.0"
         }
     ]
 }
