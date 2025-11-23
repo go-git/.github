@@ -15,7 +15,6 @@
     "labels": [
         "dependencies"
     ],
-    "prConcurrentLimit": 5,
     "constraints": {
         "go": "<1.25"
     },
