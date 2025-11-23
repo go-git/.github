@@ -18,6 +18,7 @@
     "constraints": {
         "go": "<1.25"
     },
+    "commitMessagePrefix": "build: ",
     "postUpdateOptions": [
         "gomodTidy",
         "gomodUpdateImportPaths"
