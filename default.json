@@ -63,7 +63,8 @@
             "matchPackagePrefixes": [
                 "github.com/go-git/",
                 "github.com/pjbgf/sha1cd"
-            ]
+            ],
+            "minimumReleaseAge": "7 days"
         },
         {
             "matchDatasources": [
