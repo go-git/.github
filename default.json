@@ -15,7 +15,6 @@
     "labels": [
         "dependencies"
     ],
-    "prConcurrentLimit": 5,
     "constraints": {
         "go": "<1.25"
     },
@@ -64,7 +63,14 @@
             "matchPackagePrefixes": [
                 "github.com/go-git/",
                 "github.com/pjbgf/sha1cd"
-            ]
+            ],
+            "minimumReleaseAge": "7 days"
+        },
+        {
+            "matchDatasources": [
+                "golang-version"
+            ],
+            "allowedVersions": "<1.25.0"
         }
     ]
 }
