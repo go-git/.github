@@ -43,7 +43,8 @@
             "groupName": "github-actions",
             "schedule": [
                 "* 5-8 * * 1"
-            ]
+            ],
+            "minimumReleaseAge": "15 days"
         },
         {
             "groupName": "golang",
@@ -72,6 +73,13 @@
                 "golang-version"
             ],
             "allowedVersions": "<1.25.0"
+        },
+        {
+            "groupName": "tooling",
+            "matchPackageNames": [
+                "golangci/golangci-lint"
+            ],
+            "minimumReleaseAge": "30 days"
         }
     ]
 }
