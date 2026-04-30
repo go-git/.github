@@ -18,6 +18,7 @@
     "constraints": {
         "go": "<1.25"
     },
+    "gitSignOff": true,
     "commitMessagePrefix": "build: ",
     "postUpdateOptions": [
         "gomodTidy",
