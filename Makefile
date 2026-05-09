@@ -1,4 +1,4 @@
-.PHONY: validate renovate-config-validate
+.PHONY: validate
 
 validate:
 	docker run --rm \
@@ -6,5 +6,3 @@ validate:
 		-w /work \
 		ghcr.io/renovatebot/renovate:41 \
 		renovate-config-validator default.json .renovaterc.json5
-
-renovate-config-validate: validate
