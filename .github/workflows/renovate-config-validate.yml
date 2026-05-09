@@ -1,4 +1,4 @@
-name: Validate Renovate config
+name: Validate
 
 on:
   pull_request:
@@ -18,5 +18,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5.0.0
 
-      - name: Validate Renovate configuration
-        run: make renovate-config-validate
+      - name: Run validation
+        run: make validate
