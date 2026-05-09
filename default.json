@@ -7,7 +7,7 @@
         ":configMigration",
         ":automergeDisabled",
         "mergeConfidence:age-confidence-badges",
-        "helpers:pinGitHubActionDigests"
+        "helpers:pinGitHubActionDigestsToSemver"
     ],
     "baseBranchPatterns": [
         "main"
