@@ -1,0 +1,22 @@
+name: Validate
+
+on:
+  pull_request:
+    paths:
+      - 'default.json'
+      - '.renovaterc.json5'
+      - 'Makefile'
+      - '.github/workflows/renovate-config-validate.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5.0.0
+
+      - name: Run validation
+        run: make validate
