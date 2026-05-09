@@ -3,6 +3,7 @@
     "extends": [
         "config:recommended",
         ":semanticCommits",
+        ":gitSignOff",
         ":rebaseStalePrs",
         ":configMigration",
         ":automergeDisabled",
@@ -18,7 +19,6 @@
     "constraints": {
         "go": "<1.26"
     },
-    "signoff": true,
     "commitMessagePrefix": "build: ",
     "postUpdateOptions": [
         "gomodTidy",
