@@ -66,7 +66,17 @@
             "matchPackagePrefixes": [
                 "github.com/go-git/",
                 "github.com/pjbgf/sha1cd"
+            ]
+        },
+        {
+            "matchManagers": [
+                "gomod"
             ],
+            "matchPackagePrefixes": [
+                "github.com/go-git/",
+                "github.com/pjbgf/sha1cd"
+            ],
+            "matchNewValue": "/\\d{14}-[0-9a-f]{12}(\\+incompatible)?$/",
             "minimumReleaseAge": "7 days"
         },
         {
