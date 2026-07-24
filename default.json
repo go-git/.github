@@ -80,6 +80,21 @@
             "minimumReleaseAge": "7 days"
         },
         {
+            "matchManagers": [
+                "gomod"
+            ],
+            "matchPackagePrefixes": [
+                "github.com/go-git/",
+                "github.com/pjbgf/sha1cd"
+            ],
+            "matchUpdateTypes": [
+                "major",
+                "minor",
+                "patch"
+            ],
+            "minimumReleaseAge": "0 days"
+        },
+        {
             "matchDatasources": [
                 "golang-version"
             ],
