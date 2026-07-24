@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Get token
         id: get_token
-        uses: actions/create-github-app-token@v2.1.4
+        uses: actions/create-github-app-token@fee1f7d63c2ff003460e3d139729b119787bc349 # v2.2.2
         with:
           private-key: ${{ secrets.RENOVATE_PRIVATE_KEY }}
           app-id: ${{ secrets.RENOVATE_APP_ID }}
@@ -28,10 +28,10 @@ jobs:
             gcfg
 
       - name: Checkout
-        uses: actions/checkout@v5.0.0
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
 
       - name: Self-hosted Renovate
-        uses: renovatebot/github-action@v44.0.1
+        uses: renovatebot/github-action@eaf12548c13069dcc28bb75c4ee4610cdbe400c5 # v44.2.6
         with:
           configurationFile: default.json
           token: '${{ steps.get_token.outputs.token }}'
