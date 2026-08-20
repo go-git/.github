@@ -17,7 +17,7 @@
         "dependencies"
     ],
     "constraints": {
-        "go": "<1.26"
+        "go": "<1.27"
     },
     "commitMessagePrefix": "build: ",
     "postUpdateOptions": [
@@ -43,7 +43,7 @@
             ],
             "groupName": "github-actions",
             "schedule": [
-                "* 5-8 * * 1"
+                "every 90 days"
             ],
             "minimumReleaseAge": "15 days"
         },
@@ -98,7 +98,7 @@
             "matchDatasources": [
                 "golang-version"
             ],
-            "allowedVersions": "<1.26.0"
+            "allowedVersions": "<1.27.0"
         },
         {
             "groupName": "tooling",
