@@ -26,6 +26,7 @@ jobs:
             go-git
             go-git-fixtures
             gcfg
+            x
 
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -41,4 +42,4 @@ jobs:
           RENOVATE_GIT_NAME: go-git-renovate[bot]
           RENOVATE_GIT_EMAIL: go-git-renovate[bot]@users.noreply.github.com
           RENOVATE_ONBOARDING: 'false'
-          RENOVATE_REPOSITORIES: go-git/.github,go-git/cli,go-git/docs,go-git/go-billy,go-git/go-git,go-git/go-git-fixtures,go-git/gcfg
+          RENOVATE_REPOSITORIES: go-git/.github,go-git/cli,go-git/docs,go-git/go-billy,go-git/go-git,go-git/go-git-fixtures,go-git/gcfg,go-git/x
